@@ -1,4 +1,4 @@
-from suma import sumar
+from sumar import sumar
 
 def test_suma_valida():
     resultado = sumar(8, 7)  # = 15
