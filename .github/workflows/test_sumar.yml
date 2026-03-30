@@ -1,0 +1,26 @@
+name: test-sumar
+
+on: 
+  pull_request:
+    branches:
+      - develop
+      - 'feat/**'
+
+jobs:
+  testing-sumar:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: descargar app
+        uses: actions/checkout@v4
+
+      - name: instalar python3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: instalar pytest
+        run: pip install pytest
+
+      - name: ejecutar test sumar
+        run: pytest test_sumar.py -v
+      
